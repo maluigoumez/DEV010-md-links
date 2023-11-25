@@ -22,7 +22,7 @@ describe("isMarkdownFile", () => {
   });
 });
 
-//  Test for readMdFile with mocks ⌛
+//  Test for readMdFile with mocks ✅
 
 describe("readMdFile", () => {
   const filePath = "./examples/test.md";
@@ -30,10 +30,6 @@ describe("readMdFile", () => {
   it("should read the contents of a markdown file", () => {
     // Mocking fs.promises.readFile
     jest.spyOn(fs.promises, "readFile").mockResolvedValue("ok");
-
-    //   (path, options, callback) => {
-    //   callback(null, "ok"); // Simulate the successful reading of file content
-    // });
 
     return readMdFile(filePath).then((content) => {
       expect(typeof content).toBe("string");
